@@ -32,4 +32,18 @@
         android:layout_gravity="bottom"
         android:background="@drawable/all_view_elevation"/>
 
+    <ProgressBar
+        android:id="@+id/pb_converter"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:paddingTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminateBehavior="repeat"
+        android:progressBackgroundTint="@color/grayDark"
+        android:scaleY="2"
+        android:indeterminateDuration="10"
+        android:indeterminateOnly="true"
+        android:layout_gravity="bottom"
+        android:foregroundGravity="bottom"/>
+
 </FrameLayout>
