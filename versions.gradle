@@ -1,0 +1,62 @@
+ext.deps = [:]
+
+def versions = [:]
+versions.kotlin = '1.2.60'
+versions.support = '28.0.0-rc01'
+versions.test_runner = '1.0.2'
+versions.constraint_layout = '1.1.2'
+versions.gradle_plugin = '3.1.4'
+versions.simplexml = '2.7'
+
+// tests
+versions.junit = '4.12'
+versions.espresso = '3.0.2'
+versions.mockito = '2.19.1'
+versions.hamcrest = '1.3'
+versions.robolectric = '3.8'
+versions.androidTestRules = '1.0.2'
+
+
+def deps = [:]
+//Негруппированные зависимости
+deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.gradle_plugin"
+deps.simplexml = "org.simpleframework:simple-xml:$versions.simplexml"
+
+def support = [:]
+support.app_compat = "com.android.support:appcompat-v7:$versions.support"
+support.support = "com.android.support:support-v4:$versions.support"
+support.design = "com.android.support:design:$versions.support"
+support.constraint = "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
+deps.support = support
+
+def tests = [:]
+tests.espressoCore = "com.android.support.test.espresso:espresso-core:$versions.espresso"
+tests.espressoContrib = "com.android.support.test.espresso:espresso-contrib:$versions.espresso"
+tests.hamcrest = "org.hamcrest:hamcrest-all:$versions.hamcrest"
+tests.mockito = "org.mockito:mockito-core:$versions.mockito"
+tests.robolectric = "org.robolectric:robolectric:$versions.robolectric"
+tests.androidTestRules = "com.android.support.test:rules:$versions.androidTestRules"
+tests.androidTestRunner = "com.android.support.test:runner:$versions.androidTestRules"
+tests.junit = "junit:junit:$versions.junit"
+deps.tests = tests
+
+def atsl = [:]
+atsl.runner = "com.android.support.test:runner:$versions.test_runner"
+deps.atsl = atsl
+
+def build_versions = [:]
+build_versions.min_sdk = 19
+build_versions.target_sdk = 28
+
+ext.build_versions = build_versions
+ext.deps = deps
+
+static def addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+    handler.maven {
+        url "https://jitpack.io"
+    }
+}
+
+ext.addRepos = this.&addRepos
