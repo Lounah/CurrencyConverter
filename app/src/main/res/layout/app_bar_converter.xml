@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Spinner
+        android:id="@+id/spinner_converter_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center_vertical"
+        android:layout_margin="@dimen/app_margin_medium" />
+
+    <ImageButton
+        android:id="@+id/btn_converter_swap_currencies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/app_margin"
+        android:background="?selectableItemBackground"
+        android:src="@drawable/ic_swap_horiz_black_36dp" />
+
+    <Spinner
+        android:id="@+id/spinner_converter_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:layout_margin="@dimen/app_margin_medium" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/all_view_elevation"/>
+
+</FrameLayout>
