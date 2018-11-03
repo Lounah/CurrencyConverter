@@ -64,13 +64,6 @@ dependencies {
     implementation deps.support.design
     implementation deps.support.constraint
 
-    // Core
-    implementation (deps.simplexml) {
-        exclude module: 'stax'
-        exclude module: 'stax-api'
-        exclude module: 'xpp3'
-    }
-
     // Testing
     testImplementation deps.tests.junit
     testImplementation deps.tests.hamcrest
