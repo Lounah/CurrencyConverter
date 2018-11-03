@@ -7,4 +7,5 @@
     <string name="value_to_covert">Количество конвертируемой валюты</string>
     <string name="convert">Перевести</string>
     <string name="result_of_conversion">Результат</string>
+    <string name="error_loading_data">Ошибка при загрузке данных</string>
 </resources>

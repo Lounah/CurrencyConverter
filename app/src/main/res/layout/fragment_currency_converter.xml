@@ -50,7 +50,7 @@
 
     <TextView
         android:id="@+id/tv_converter_result_of_conversion"
-        style="@style/TextStyle"
+        style="@style/TextStyle.Large"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/app_margin"
@@ -71,5 +71,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/container_converter_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whiteSemiTransparent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/view_converter_loading"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>
