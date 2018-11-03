@@ -13,6 +13,7 @@ import java.util.Objects;
 public abstract class BaseFragment extends Fragment {
 
     protected abstract int getLayoutRes();
+
     protected abstract void initUI();
 
     @Nullable
@@ -30,5 +31,13 @@ public abstract class BaseFragment extends Fragment {
 
     protected View findViewById(int viewId) {
         return Objects.requireNonNull(getView()).findViewById(viewId);
+    }
+
+    protected void showToast(String msg) {
+        ((BaseActivity) Objects.requireNonNull(getActivity())).showToast(msg);
+    }
+
+    protected void showToast(int msgRes) {
+        ((BaseActivity) Objects.requireNonNull(getActivity())).showToast(msgRes);
     }
 }

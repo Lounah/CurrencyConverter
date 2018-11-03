@@ -7,6 +7,7 @@ import android.widget.Toast;
 public abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract int getLayoutResource();
+
     protected abstract void initUIComponents();
 
     @Override
