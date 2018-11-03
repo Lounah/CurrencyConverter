@@ -1,6 +1,7 @@
 package com.lounah.currencyconverter.core.executor;
 
 import android.os.Process;
+import android.support.annotation.NonNull;
 
 import java.util.concurrent.ThreadFactory;
 
@@ -8,12 +9,12 @@ public class PriorityThreadFactory implements ThreadFactory {
 
     private final int mThreadPriority;
 
-    public PriorityThreadFactory(int threadPriority) {
+    PriorityThreadFactory(int threadPriority) {
         mThreadPriority = threadPriority;
     }
 
     @Override
-    public Thread newThread(final Runnable runnable) {
+    public Thread newThread(@NonNull final Runnable runnable) {
         Runnable wrapperRunnable = () -> {
             try {
                 Process.setThreadPriority(mThreadPriority);
